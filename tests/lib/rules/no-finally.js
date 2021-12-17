@@ -16,21 +16,23 @@ const rule = require("../../../lib/rules/no-finally"),
 // Tests
 //------------------------------------------------------------------------------
 
-const ruleTester = new RuleTester();
-ruleTester.run("no-finally", rule, {
+const ruleTester = new RuleTester({
+  parserOptions: {
+    ecmaVersion: 9, // 默认支持语法为es5 
+  },
+}); ruleTester.run("no-finally", rule, {
   valid: [
     // give me some code that won't trigger a warning
   ],
 
   invalid: [
     {
-      code: `try {
-       
-    } catch(e) {
-      console.error(1)
-    } finally {
-      console.log('log')
-    }`,
+      code: `new Promise().then((data)=>{
+        console.log('2')
+      
+      }).finally((res)=>{
+      console.log('2')
+      })`,
       errors: [{ message: "Fill me in.", type: "Me too" }],
     },
   ],

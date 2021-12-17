@@ -24,7 +24,6 @@ const ruleTester = new RuleTester({
 ruleTester.run("no-console", rule, {
   valid: [
     // give me some code that won't trigger a warning
-
   ],
 
   invalid: [
