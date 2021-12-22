@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-yykjlint",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "夜莺科技的订制lint",
   "keywords": [
     "eslint",
